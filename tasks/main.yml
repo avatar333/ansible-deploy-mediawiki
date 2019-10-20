@@ -1,2 +1,5 @@
 ---
 # tasks file for ansible-deploy-mediawiki
+
+- include_tasks: 020-create-mediawiki-docker.yml
+  tags: create-mediawiki-docker

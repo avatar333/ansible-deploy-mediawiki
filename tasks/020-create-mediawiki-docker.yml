@@ -1,0 +1,15 @@
+---
+
+# Source homepage: https://hub.docker.com/_/mediawiki
+
+- name: Create Mediawiki docker
+  docker_container:
+    name: mymediawiki
+    image: mediawiki:latest
+    state: stopped
+    volumes:
+      - "{{ IMAGES_DIR }}:/var/www/html/images"
+      - "{{ LOCALSETTINGS_FILE }}:/var/www/html/LocalSettings.php"
+    userns_mode: host
+    network_mode: host
+    published_ports: "8585:80"

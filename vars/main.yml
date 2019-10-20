@@ -1,2 +1,9 @@
 ---
 # vars file for ansible-deploy-mediawiki
+
+HTML_DIR: "/mnt/miscdata/opt/configs/mediawiki/html"
+IMAGES_DIR: "/mnt/miscdata/opt/configs/mediawiki/html/images"
+LOCALSETTINGS_FILE: "{{ HTML_DIR }}/LocalSettings.php"
+
+# DB username / pasword = wikiuser / 9s6QsNYMP8er5KyC
+# Admin account U / P : kevinp / S73TkSR1Ez8s
