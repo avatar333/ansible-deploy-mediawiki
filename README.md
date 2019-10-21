@@ -35,6 +35,7 @@ PHP.ini
 - In /usr/local/etc/php/, there are two files: php.ini-development and php.ini-production
 - Copy one (I used prod last) to ./php.ini
 - Change:
+```
   # diff php.ini php.ini-production
 669c669
 < post_max_size = 0M
@@ -44,10 +45,12 @@ PHP.ini
 < upload_max_filesize = 100M
 ---
 > upload_max_filesize = 2M
+```
 
 LocalSettings.ini
-- $wgServer = "http://wiki.thedarkarts.za.net";
-
+```
+$wgServer = "http://wiki.thedarkarts.za.net";
+```
 
 License
 -------
