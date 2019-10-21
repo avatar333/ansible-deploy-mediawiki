@@ -30,7 +30,7 @@ Including an example of how to use your role (for instance, with variables passe
 Mediawiki Configuration Changes
 -------------------------------
 
-PHP.ini
+#####PHP.ini
 - Locate php.ini: php --ini
 - In /usr/local/etc/php/, there are two files: php.ini-development and php.ini-production
 - Copy one (I used prod last) to ./php.ini
@@ -47,7 +47,7 @@ PHP.ini
 > upload_max_filesize = 2M
 ```
 
-LocalSettings.ini
+#####LocalSettings.ini
 ```
 $wgServer = "http://wiki.thedarkarts.za.net";
 ```
