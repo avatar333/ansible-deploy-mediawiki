@@ -1,12 +1,12 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+Install and configure mediawiki in a docker container	
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+An accessible MariaDB instance
 
 Role Variables
 --------------
@@ -26,6 +26,28 @@ Including an example of how to use your role (for instance, with variables passe
     - hosts: servers
       roles:
          - { role: username.rolename, x: 42 }
+
+Mediawiki Configuration Changes
+-------------------------------
+
+PHP.ini
+- Locate php.ini: php --ini
+- In /usr/local/etc/php/, there are two files: php.ini-development and php.ini-production
+- Copy one (I used prod last) to ./php.ini
+- Change:
+  # diff php.ini php.ini-production
+669c669
+< post_max_size = 0M
+---
+> post_max_size = 8M
+822c822
+< upload_max_filesize = 100M
+---
+> upload_max_filesize = 2M
+
+LocalSettings.ini
+- $wgServer = "http://wiki.thedarkarts.za.net";
+
 
 License
 -------
